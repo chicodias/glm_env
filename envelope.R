@@ -20,7 +20,6 @@ df <- datasets::iris
 
 df <- df %>% mutate(is_vir = as.numeric(Species == "virginica")) %>% select(!Species)
 
-dados <- df
 
 fit.model <- glm(is_vir ~., family = binomial() , data = df)
 
