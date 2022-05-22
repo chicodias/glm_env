@@ -1,5 +1,5 @@
 # envelope_glm
-# recebe um modelo do sm e plota o respectivo envelope dos residuos
+# recebe um modelo do sm e plota o respectivo envelope dos resíduos
 #
 import numpy as np
 import pandas as pd
@@ -7,10 +7,11 @@ import statsmodels.api as sm
 from statsmodels.genmod.generalized_linear_model import GLM
 
 
-def env_glm(model:GLMResults):
+def env_glm(model:GLMResults, df:pd.DataFrame):
 
+    n = len(df)
     # create an array with n 1s
-    mt = np.ones(len(df))
+    mt = np.ones(n)
 
     # create a matrix with the values of the variables
     X = df[fatores].values
